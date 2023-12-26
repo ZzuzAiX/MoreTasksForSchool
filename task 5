@@ -1,0 +1,33 @@
+Console.Write("Hello, please type a number ");
+int num = Convert.ToInt32(Console.ReadLine());
+// this part creates the option for user input
+void primeNumbersFunction()
+{
+    List<int> primeNumbers = new List<int>();
+    for (int i = 2; i <= num; i++)
+    {
+        if (!IsComposite(i))
+        {
+            primeNumbers.Add(i);
+        }
+    }
+    foreach (int primeNumber in primeNumbers)
+    {
+        Console.Write(" " + primeNumber);
+    }
+}
+
+ bool IsComposite(int num)
+{
+    for (int i = 2; i < num; i++)
+    {
+        if (num % i == 0)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+// this part checks if the number is composite by dividing num by 2 and every next number lesser than num
+primeNumbersFunction();
+// now we call the function and voila:D
